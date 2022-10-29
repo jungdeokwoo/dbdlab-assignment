@@ -1,5 +1,10 @@
+import { Main } from '.'
+import styled from 'styled-components'
+
 const calendar = () => {
-  return <div>calendar</div>
+  return <CalendarMain>calendar</CalendarMain>
 }
 
 export default calendar
+
+const CalendarMain = styled(Main)``

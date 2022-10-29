@@ -1,7 +1,9 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import GlobalStyle from '../styles/GlobalStyle'
+import { ThemeProvider } from 'styled-components'
 import Layout from '../components/Layout'
+import theme from '../styles/Theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,9 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>DBD랩 사전과제</title>
       </Head>
       <GlobalStyle />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </>
   )
 }

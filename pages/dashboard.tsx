@@ -29,6 +29,7 @@ const DashboardMain = styled(Main)`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  box-shadow: -1px -1px 3px ${({ theme }) => theme.border};
 `
 
 const Chart = styled.div`

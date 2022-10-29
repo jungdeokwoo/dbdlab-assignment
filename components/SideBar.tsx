@@ -17,10 +17,11 @@ const SideBar = ({ width }: sideProps) => {
 
 export default SideBar
 
-const SideBarContainer = styled.div<{ width: string }>`
+const SideBarContainer = styled.aside<{ width: string }>`
   position: fixed;
   left: 0;
   width: ${({ width }) => width};
   height: 100%;
   padding: 48px 0 0 48px;
+  box-shadow: 1px 0 3px ${({ theme }) => theme.border};
 `

@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import SideBar from './SideBar'
 
-type ChildrenProps = {
+type childrenProps = {
   children: React.ReactNode
 }
 
 const SIDE_BAR_WIDTH = '252px'
 
-const Layout = ({ children }: ChildrenProps) => {
+const Layout = ({ children }: childrenProps) => {
   return (
     <MainLayout padding={SIDE_BAR_WIDTH}>
       <SideBar width={SIDE_BAR_WIDTH} />

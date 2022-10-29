@@ -11,7 +11,7 @@ const Layout = ({ children }: ChildrenProps) => {
   return (
     <MainLayout padding={SIDE_BAR_WIDTH}>
       <SideBar width={SIDE_BAR_WIDTH} />
-      <Contents>{children}</Contents>
+      {children}
     </MainLayout>
   )
 }
@@ -24,10 +24,4 @@ const MainLayout = styled.div<{ padding: string }>`
   height: 1024px;
   padding-left: ${({ padding }) => padding};
   background-color: ${({ theme }) => theme.backGround};
-`
-
-const Contents = styled.section`
-  width: 100%;
-  height: 100%;
-  padding: 20px 0 20px 20px;
 `

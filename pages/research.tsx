@@ -1,5 +1,10 @@
+import { Main } from '.'
+import styled from 'styled-components'
+
 const research = () => {
-  return <div>research</div>
+  return <ResearchMain>research</ResearchMain>
 }
 
 export default research
+
+const ResearchMain = styled(Main)``

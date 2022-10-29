@@ -1,4 +1,10 @@
+import { Main } from '.'
+import styled from 'styled-components'
+
 const dashboard = () => {
-  return <div>대쉬보드</div>
+  return <DashboardMain>dashboard</DashboardMain>
 }
+
 export default dashboard
+
+const DashboardMain = styled(Main)``

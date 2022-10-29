@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import styled from 'styled-components'
 import MenuButton from './MenuButton'
+import { lowerCase } from '../utils/lowercase'
 
 const SIDE_MENU_LIST = [
   { id: 1, name: 'Dashboard', image: '/images/icon_dashboard01.svg' },
@@ -13,7 +15,13 @@ const Menu = () => {
   return (
     <MenuWrapper>
       {SIDE_MENU_LIST.map(sideMenu => (
-        <MenuButton key={sideMenu.id} sideMenu={sideMenu} />
+        <LinkMenu
+          key={sideMenu.id}
+          href={`/${lowerCase(sideMenu.name)}`}
+          passHref
+        >
+          <MenuButton sideMenu={sideMenu} />
+        </LinkMenu>
       ))}
     </MenuWrapper>
   )
@@ -27,4 +35,8 @@ const MenuWrapper = styled.div`
   justify-content: space-between;
   margin-top: 56px;
   height: 328px;
+`
+
+const LinkMenu = styled(Link)`
+  text-decoration: none;
 `

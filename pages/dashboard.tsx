@@ -103,8 +103,11 @@ const DateSelector = styled.select`
 const Date = styled.option``
 
 export async function getStaticProps() {
-  const allCovidData = getCovidTotalInf()
-  const ageGenCovidData = getCovidAgeGenInf()
+  const CovidTotalInf = await getCovidTotalInf()
+  const allCovidData = CovidTotalInf.items.item
+  const CovidAgeGenInf = await getCovidAgeGenInf()
+  const ageGenCovidData = CovidAgeGenInf.items.item
+
   return {
     props: { allCovidData, ageGenCovidData },
   }

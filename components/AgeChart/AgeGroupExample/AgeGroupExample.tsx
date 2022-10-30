@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import AgeGroupItem from './AgeGroupItem'
+import ChartExampleItem from '../../ChartExampleItem'
 
 const AGE_GROUP_DATA = [
   { id: 0, gubun: '0-9', color: 'red' },
@@ -17,7 +17,7 @@ const AgeGroupExample = () => {
   return (
     <AgeGroupWrapper>
       {AGE_GROUP_DATA.map(item => (
-        <AgeGroupItem key={item.id} gubun={item.gubun} color={item.color} />
+        <ChartExampleItem key={item.id} gubun={item.gubun} color={item.color} />
       ))}
     </AgeGroupWrapper>
   )
@@ -27,8 +27,7 @@ export default AgeGroupExample
 
 const AgeGroupWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
-  justify-items: center;
   margin-top: 20px;
 `

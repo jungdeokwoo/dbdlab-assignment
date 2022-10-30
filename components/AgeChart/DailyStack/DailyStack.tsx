@@ -26,6 +26,7 @@ const DailyStackWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
+  top: 0;
   left: -15px;
   height: 200px;
 `

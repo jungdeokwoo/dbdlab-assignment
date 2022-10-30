@@ -2,6 +2,7 @@ import { Main } from '.'
 import styled from 'styled-components'
 import ChartLayout from '../components/ChartLayout'
 import AgeChart from '../components/AgeChart/AgeChart'
+import GenderChart from '../components/GenderChart/GenderChart'
 
 const dashboard = () => {
   return (
@@ -20,7 +21,16 @@ const dashboard = () => {
           />
         </ChartLayout>
         <ChartLayout title="일자별 성별 확진자 수">
-          <Chart />
+          <DateSelector>
+            <Date>11/01</Date>
+            <Date>11/02</Date>
+            <Date>11/03</Date>
+            <Date>11/04</Date>
+            <Date>11/05</Date>
+            <Date>11/06</Date>
+            <Date>11/07</Date>
+          </DateSelector>
+          <GenderChart />
         </ChartLayout>
       </BottomChartWrapper>
     </DashboardMain>
@@ -49,6 +59,15 @@ const UpperChartWrapper = styled.section`
 `
 
 const BottomChartWrapper = styled(UpperChartWrapper)``
+
+const DateSelector = styled.select`
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  width: 80px;
+`
+
+const Date = styled.option``
 
 const DATA = [
   {

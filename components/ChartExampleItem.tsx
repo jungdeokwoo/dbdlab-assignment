@@ -1,32 +1,31 @@
 import styled from 'styled-components'
 
-type AgeGroupItemProps = {
+type ChartExampleItemProps = {
   gubun: string
   color: string
 }
 
-const AgeGroupItem = ({ gubun, color }: AgeGroupItemProps) => {
+const ChartExampleItem = ({ gubun, color }: ChartExampleItemProps) => {
   return (
-    <AgeGroupItemWrapper>
+    <ChartExampleItemWrapper>
       <ChartColor color={color} />
       <Age>{gubun}</Age>
-    </AgeGroupItemWrapper>
+    </ChartExampleItemWrapper>
   )
 }
 
-export default AgeGroupItem
+export default ChartExampleItem
 
-const AgeGroupItemWrapper = styled.div`
+const ChartExampleItemWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 100px;
   height: 30px;
 `
 
 const ChartColor = styled.div<{ color: string }>`
   width: 16px;
   height: 7px;
-  background-color: ${({ color }) => color};
+  background-color: ${({ theme, color }) => theme[color]};
   margin-right: 5px;
 `
 

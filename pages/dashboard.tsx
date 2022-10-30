@@ -1,6 +1,7 @@
 import { Main } from '.'
 import styled from 'styled-components'
 import ChartLayout from '../components/ChartLayout'
+import AgeChart from '../components/AgeChart'
 
 const dashboard = () => {
   return (
@@ -12,7 +13,7 @@ const dashboard = () => {
       </UpperChartWrapper>
       <BottomChartWrapper>
         <ChartLayout title="일자별 연령대 확진자 수">
-          <Chart />
+          <AgeChart />
         </ChartLayout>
         <ChartLayout title="일자별 성별 확진자 수">
           <Chart />

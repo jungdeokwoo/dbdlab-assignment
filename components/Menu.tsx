@@ -38,5 +38,6 @@ const MenuWrapper = styled.div`
 `
 
 const LinkMenu = styled(Link)`
+  width: fit-content;
   text-decoration: none;
 `

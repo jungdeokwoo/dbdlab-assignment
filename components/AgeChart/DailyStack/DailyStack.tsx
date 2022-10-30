@@ -4,11 +4,11 @@ import type { ageChartProps } from '../AgeChart'
 
 const DailyStack = ({ dailyConf }: { dailyConf: ageChartProps[] }) => {
   const totalDate = new Set(dailyConf.map(item => item.stateDt))
-  const DateArray = Array.from(totalDate)
+  const dateArray = Array.from(totalDate)
 
   return (
     <DailyStackWrapper>
-      {DateArray.map((date, index) => (
+      {dateArray.map((date, index) => (
         <DailyStackBar
           key={index}
           date={date}

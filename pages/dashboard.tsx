@@ -1,10 +1,26 @@
+import { useMemo, useState } from 'react'
 import { Main } from '.'
 import styled from 'styled-components'
 import ChartLayout from '../components/ChartLayout'
 import AgeChart from '../components/AgeChart/AgeChart'
 import GenderChart from '../components/GenderChart/GenderChart'
+import { getDate } from '../utils/getDate'
 
 const dashboard = () => {
+  const [selectedDate, setSelectedDate] = useState('20211101')
+
+  const dateArray = useMemo(() => {
+    const totalDate = new Set(DATA.map(item => item.stateDt))
+    const date = Array.from(totalDate)
+
+    return date.reverse()
+  }, [])
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { target } = event
+    setSelectedDate(target.value)
+  }
+
   return (
     <DashboardMain>
       <UpperChartWrapper>
@@ -15,22 +31,26 @@ const dashboard = () => {
       <BottomChartWrapper>
         <ChartLayout title="일자별 연령대 확진자 수">
           <AgeChart
-            data={DATA.filter(
+            dailyConf={DATA.filter(
               item => item.gubun !== '남성' && item.gubun !== '여성',
             )}
           />
         </ChartLayout>
         <ChartLayout title="일자별 성별 확진자 수">
-          <DateSelector>
-            <Date>11/01</Date>
-            <Date>11/02</Date>
-            <Date>11/03</Date>
-            <Date>11/04</Date>
-            <Date>11/05</Date>
-            <Date>11/06</Date>
-            <Date>11/07</Date>
+          <DateSelector onChange={handleChange}>
+            {dateArray.map((date, index) => (
+              <Date key={index} value={date}>
+                {getDate(date)}
+              </Date>
+            ))}
           </DateSelector>
-          <GenderChart />
+          <GenderChart
+            dailyConf={DATA.filter(
+              item =>
+                item.stateDt === selectedDate &&
+                (item.gubun === '남성' || item.gubun === '여성'),
+            )}
+          />
         </ChartLayout>
       </BottomChartWrapper>
     </DashboardMain>

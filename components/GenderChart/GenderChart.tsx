@@ -1,15 +1,24 @@
+import { useMemo } from 'react'
 import styled from 'styled-components'
-import ChartExampleItem from '../ChartExampleItem'
+import { getPercentage } from '../../utils/getPercentage'
+import GenderExample from './GenderExample'
 
-const GenderChart = () => {
+type genderChartProps = {
+  confCase: string
+  stateDt: string
+  gubun: string
+}
+
+const GenderChart = ({ dailyConf }: { dailyConf: genderChartProps[] }) => {
+  const percentage = useMemo(() => {
+    return getPercentage(dailyConf)
+  }, [dailyConf])
+
   return (
     <GenderChartWrapper>
-      <PieChart />
+      <PieChart percentage={percentage} />
       <PieChartWhiteSpace />
-      <ChartExampleWrapper>
-        <ChartExampleItem gubun="남자" color="genderMan" />
-        <ChartExampleItem gubun="여자" color="genderWoman" />
-      </ChartExampleWrapper>
+      <GenderExample />
     </GenderChartWrapper>
   )
 }
@@ -22,12 +31,12 @@ const GenderChartWrapper = styled.section`
   height: 300px;
 `
 
-const PieChart = styled.div`
+const PieChart = styled.div<{ percentage: number }>`
   width: 100%;
   height: 100%;
   background: conic-gradient(
-    ${({ theme }) => theme.genderMan} 0% 30%,
-    ${({ theme }) => theme.genderWoman} 30% 100%
+    ${({ theme }) => theme.genderMan} 0% ${({ percentage }) => percentage}%,
+    ${({ theme }) => theme.genderWoman} ${({ percentage }) => percentage}% 100%
   );
   border-radius: 50%;
 `
@@ -41,10 +50,4 @@ const PieChartWhiteSpace = styled.div`
   background-color: white;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-`
-
-const ChartExampleWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 30px;
 `

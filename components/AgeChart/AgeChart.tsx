@@ -9,10 +9,10 @@ export type ageChartProps = {
   gubun: string
 }
 
-const AgeChart = ({ data }: { data: ageChartProps[] }) => {
+const AgeChart = ({ dailyConf }: { dailyConf: ageChartProps[] }) => {
   return (
     <StackBarChart>
-      <DailyStack dailyConf={data} />
+      <DailyStack dailyConf={dailyConf} />
       <DecideCntLine />
       <AgeGroupExample />
     </StackBarChart>

@@ -38,7 +38,9 @@ const ChartTitle = styled.h1`
 `
 
 const ChartWrapper = styled.article`
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import AgeGroupExample from './AgeGroup/AgeGroupExample'
+import AgeGroupExample from './AgeGroupExample/AgeGroupExample'
 import DailyStack from './DailyStack/DailyStack'
 import DecideCntLine from './DecideCntLine/DecideCntLine'
 

@@ -1,10 +1,10 @@
 import { Main } from '.'
 import styled from 'styled-components'
 
-const research = () => {
-  return <ResearchMain>research</ResearchMain>
+const Research = () => {
+  return <ResearchMain>Research</ResearchMain>
 }
 
-export default research
+export default Research
 
 const ResearchMain = styled(Main)``

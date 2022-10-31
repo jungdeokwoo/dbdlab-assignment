@@ -1,10 +1,10 @@
 import { Main } from '.'
 import styled from 'styled-components'
 
-const members = () => {
-  return <MembersMain>members</MembersMain>
+const Members = () => {
+  return <MembersMain>Members</MembersMain>
 }
 
-export default members
+export default Members
 
 const MembersMain = styled(Main)``

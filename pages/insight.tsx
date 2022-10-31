@@ -1,10 +1,10 @@
 import { Main } from '.'
 import styled from 'styled-components'
 
-const insight = () => {
-  return <InsightMain>insight</InsightMain>
+const Insight = () => {
+  return <InsightMain>Insight</InsightMain>
 }
 
-export default insight
+export default Insight
 
 const InsightMain = styled(Main)``

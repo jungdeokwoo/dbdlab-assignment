@@ -1,10 +1,10 @@
 import { Main } from '.'
 import styled from 'styled-components'
 
-const calendar = () => {
-  return <CalendarMain>calendar</CalendarMain>
+const Calendar = () => {
+  return <CalendarMain>Calendar</CalendarMain>
 }
 
-export default calendar
+export default Calendar
 
 const CalendarMain = styled(Main)``

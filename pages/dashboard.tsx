@@ -13,7 +13,7 @@ type covidData = {
   gubun: string
 }
 
-const dashboard = ({
+const Dashboard = ({
   allCovidData,
   ageGenCovidData,
 }: {
@@ -70,7 +70,7 @@ const dashboard = ({
   )
 }
 
-export default dashboard
+export default Dashboard
 
 const DashboardMain = styled(Main)`
   display: flex;

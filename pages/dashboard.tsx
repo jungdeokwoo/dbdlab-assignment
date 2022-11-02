@@ -14,10 +14,10 @@ type covidData = {
 }
 
 const Dashboard = ({
-  allCovidData,
+  // allCovidData,
   ageGenCovidData,
 }: {
-  allCovidData: covidData[]
+  // allCovidData: covidData[]
   ageGenCovidData: covidData[]
 }) => {
   const [selectedDate, setSelectedDate] = useState('20211101')
@@ -103,12 +103,12 @@ const DateSelector = styled.select`
 const Date = styled.option``
 
 export async function getStaticProps() {
-  const CovidTotalInf = await getCovidTotalInf()
-  const allCovidData = CovidTotalInf.items.item
+  // const CovidTotalInf = await getCovidTotalInf()
+  // const allCovidData = CovidTotalInf.items.item
   const CovidAgeGenInf = await getCovidAgeGenInf()
   const ageGenCovidData = CovidAgeGenInf.items.item
 
   return {
-    props: { allCovidData, ageGenCovidData },
+    props: { /** allCovidData, **/ ageGenCovidData },
   }
 }

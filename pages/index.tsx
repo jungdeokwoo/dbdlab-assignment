@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import styled from 'styled-components'
 
 const Index: NextPage = () => {
-  return <Main>Home</Main>
+  return <Main>Home 변경되었습니다</Main>
 }
 
 export default Index
